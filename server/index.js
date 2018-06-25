@@ -13,5 +13,4 @@ const {publicPath} = webpackConfig.output
 app.use(webpackDevMiddleware(compiler, publicPath))
 app.use(webpackHotMiddleware(compiler))
 
-
 app.listen(8080)

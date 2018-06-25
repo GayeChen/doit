@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const OpenBrowserPlugin = require('open-browser-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   entry: "./example/test1.js",
@@ -57,5 +58,7 @@ module.exports = {
       title: 'Output',
       template: path.resolve(__dirname, '../index.html'),
     }),
-    new OpenBrowserPlugin({ url: 'http://localhost:8080' })  ]
+    new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
+    new webpack.HotModuleReplacementPlugin(),
+  ]
 }
