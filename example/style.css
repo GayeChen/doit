@@ -6,6 +6,6 @@
 
 .hello {
   font-family: 'MyFont';
-  color: red;
+  color: blue;
   background: url(./logo.png) no-repeat center;
 }

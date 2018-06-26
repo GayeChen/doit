@@ -9,7 +9,7 @@ export default function (compiler, publicPath) {
 
   const middleware = WebpackDevMiddleware(compiler, {
     publicPath,
-    // contentBase: '',
+    contentBase: '/',
     hot: true,
     quiet: false,
     noInfo: false,

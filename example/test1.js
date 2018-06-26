@@ -20,14 +20,26 @@ import Icon from './logo.png'
 //
 // document.body.appendChild(component());
 
-import React from '../packages/react'
+import React, {Component} from '../packages/react'
 import {render} from '../packages/react-dom'
 
 
-function Test2() {
+function Hello({name}) {
  return <div>
-   Hello, I am a stateless function component
+   Hello, I am {name}, a stateless function component
  </div>
+}
+
+class Hello2 extends Component{
+  constructor(props) {
+    super(props)
+  }
+  render() {
+    const {name} = this.props
+    return <div>
+      Hello, I am {name}, a component
+    </div>
+  }
 }
 
 const Ele = React.createElement(
@@ -38,8 +50,17 @@ const Ele = React.createElement(
   },
   'Hello, world! \n',
   'I am a react element',
+   <Hello name={'hello'}/>,
+  <Hello2 name={'hello2'}/>
 )
 
 console.log(Ele);
 
 render(Ele, document.getElementById('root'))
+
+if (module.hot) {
+  module.hot.accept('./test1.js', function() {
+    console.log('Accepting the updated printMe module!');
+    render(Ele, document.getElementById('root'))
+  })
+}
