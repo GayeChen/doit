@@ -1,5 +1,5 @@
 // import types from '../../utils/type-check'
-import {renderComponent} from "../react-dom";
+import {renderComponent} from "../react-dom/diff";
 
 export function Element(type, props, children) {
   this.type = type
@@ -25,5 +25,6 @@ export function createElement(type, props, ...children) {
 }
 
 export default {
+  Component,
   createElement,
 }

@@ -4,7 +4,8 @@ const OpenBrowserPlugin = require('open-browser-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
-  entry: "./example/test1.js",
+  mode: 'development',
+  entry: "./example/Counter.js",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, '../dist'),
@@ -15,12 +16,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['babel-preset-env']
-          }
-        }
+        use: ['babel-loader'],
       },
       {
         test: /\.css$/,
@@ -58,7 +54,7 @@ module.exports = {
       title: 'Output',
       template: path.resolve(__dirname, '../index.html'),
     }),
-    new OpenBrowserPlugin({ url: 'http://localhost:8080' }),
+    new OpenBrowserPlugin({ url: 'http://localhost:8000' }),
     new webpack.HotModuleReplacementPlugin(),
   ]
 }
