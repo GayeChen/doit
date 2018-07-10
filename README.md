@@ -8,7 +8,6 @@ the react-like mini library
 - 实现组件和生命周期
 
 ## 待完成
-- 异步setState
 - router
 
 ## diff算法
