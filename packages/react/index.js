@@ -1,5 +1,5 @@
-// import types from '../../utils/type-check'
 import {renderComponent} from "../react-dom/diff";
+import {enqueueSetState} from "./queue";
 
 export function Element(type, props, children) {
   this.type = type
@@ -13,9 +13,10 @@ export class Component {
     this.props = props
   }
   
-  setState(newState) {
-    Object.assign(this.state, newState)
-    renderComponent(this)
+  setState(stateChange) {
+    // Object.assign(this.state, stateChange)
+    // renderComponent(this)
+    enqueueSetState(stateChange, this)
   }
 }
 

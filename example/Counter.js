@@ -9,6 +9,23 @@ class Counter extends Component {
     }
   }
   
+  componentDidMount() {
+    for ( let i = 0; i < 100; i++ ) {
+      
+      // 方法一
+      this.setState( { num: this.state.num + 1 } );
+      console.log( this.state.num );
+      
+      // 方法二
+      // this.setState( prevState => {
+      //   console.log( prevState.num );
+      //   return {
+      //     num: prevState.num + 1
+      //   }
+      // } );
+    }
+  }
+  
   componentWillUpdate() {
     console.log( 'update' );
   }
