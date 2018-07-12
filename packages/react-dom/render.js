@@ -73,14 +73,7 @@ export function _render(vDom, container) {
 
 
 export function render(vDom, container, dom) {
-  // container.innerHTML = ''
+  container.innerHTML = ''
   // return _render(vDom, container)
-  
   return diff(dom, vDom, container)
-  
-  // if(dom) {
-  //   return diff(dom, vDom, container)
-  // } else {
-  //   return _render(vDom, container)
-  // }
 }

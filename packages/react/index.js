@@ -1,16 +1,23 @@
-import {renderComponent} from "../react-dom/diff";
+// import {renderComponent} from "../react-dom/diff";
+// import {setComponentProps} from "../react-dom/diff";
 import {enqueueSetState} from "./queue";
+
 
 export function Element(type, props, children) {
   this.type = type
-  this.props = props
+  this.props = {...props, children}
   this.children = children
 }
 
 export class Component {
   constructor(props = {}) {
+    // console.log(props, 'constoructio');
     this.state = {}
     this.props = props
+  }
+  
+  forceUpdate = () => {
+    this.setState({})
   }
   
   setState(stateChange) {

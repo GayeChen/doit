@@ -1,13 +1,14 @@
 # doit
 
-the react-like mini library
+The React-like mini library
+> 此库仅供学习，不做任何实际生产用途
 
 ## 简单模拟react的实现机制
 
 - 实现基本的createElement和render
-- 实现组件和生命周期
-
-## 待完成
+- 实现组件的渲染和生命周期
+- diff算法
+- 异步的setState
 - router
 
 ## diff算法
@@ -21,7 +22,19 @@ the react-like mini library
     - 更新dom
 - 对比组件
 
+## 路由
+- 示例
+```
+<ul className="nav">
+    <li><Link to="/">Home Link</Link></li>
+    <li><Link to="/about">About Link</Link></li>
+    <li><Link to="/topics">Topics, Link</Link></li>
+</ul>
 
+    <Route exact path="/" component={Home} />
+    <Route path="/about" component={About} />
+    <Route path="/topics" component={Topics} />
+```  
 
 
 

@@ -5,7 +5,7 @@ const webpack = require('webpack')
 
 module.exports = {
   mode: 'development',
-  entry: "./example/Counter.js",
+  entry: "./example/Router-base-exam.js",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, '../dist'),
